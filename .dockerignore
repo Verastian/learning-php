@@ -1,0 +1,10 @@
+# Exclude local build files
+
+# Exclude files from version control
+.git
+.gitignore
+
+# Exclude temporary or unnecessary files
+*.log
+*.swp
+.DS_Store
