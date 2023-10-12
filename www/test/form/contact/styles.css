@@ -36,11 +36,13 @@ body {
   justify-content: center;
   align-items: center;
   height: 100vh;
+  position: relative;
 }
 
 .form {
   background-color: var(--input-bg-color);
   width: 400px;
+  height: 500px;
   border-radius: 8px;
   padding: 40px;
   box-shadow: var(--box-shadow);
@@ -100,7 +102,7 @@ body {
   border-radius: 6px;
   cursor: pointer;
   font-size: 16px;
-  margin-top: 30px;
+  margin-top: 100px;
   width: 100%;
 }
 
@@ -119,6 +121,80 @@ body {
   color: var(--label-focus-color);
 }
 
-.input:focus {
+.input:focus,
+.textarea:focus {
   border: 2px solid var(--button-bg-color);
+}
+
+.textarea {
+  position: absolute;
+  top: 0;
+  left: 0;
+  border: 1px solid var(--border-color);
+  border-radius: 7px;
+  font-size: 16px;
+  padding: 0 20px;
+  outline: none;
+  background: none;
+  z-index: 1;
+  width: 100%;
+  min-height: 100px; /* Establece una altura mínima para el textarea */
+  resize: none; /* Evita que el textarea sea redimensionable por el usuario */
+  color: var(--label-color);
+}
+
+.textarea:focus + .label,
+.textarea:not(:placeholder-shown) + .label {
+  top: -7px;
+  left: 3px;
+  z-index: 10;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--label-focus-color);
+}
+
+.message-container {
+  position: absolute;
+  top: 0%;
+  margin-left: auto;
+  margin-right: auto;
+  min-width: 300px;
+  max-width: 500px;
+  margin-top: 10px;
+  border-radius: 5px;
+  padding: 20px 40px;
+  opacity: 0; /* Inicialmente oculto */
+  transform: translateY(-20px); /* Inicialmente desplazado hacia arriba */
+  transition: opacity 0.3s, transform 0.3s; /* Transiciones para efecto de fade y movimiento */
+}
+
+.error-container,
+.success-container {
+  background-color: transparent; /* Fondo transparente inicialmente */
+  color: #ffffff;
+  padding: 16px;
+}
+
+.error-container {
+  background-color: #c03333; /* Color de fondo para errores */
+}
+
+.success-container {
+  background-color: #38ac38; /* Color de fondo para éxito */
+}
+
+/* Agregar clases de animación para mostrar y ocultar el mensaje */
+.show-message {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.hide-message {
+  opacity: 0;
+  transform: translateY(-20px);
+}
+
+.data {
+  position: absolute;
+  bottom: 10%;
 }
