@@ -7,7 +7,7 @@ $activo = true;
 
 echo "IMPRIMIR ------------------------------------- <br><br>";
 
-print $nombre ."<br>";
+print $nombre . "<br>";
 
 
 echo "<br>";
@@ -98,9 +98,9 @@ $colores = array("rojo", "verde", "azul");
 // o
 $colores2 = ["amarillo", "blanco", "negro"];
 
-$frutas = array("manzana","platano","naranja","piña");
+$frutas = array("manzana", "platano", "naranja", "piña");
 // ó
-$frutas2 = ["pera","durazno","uva","frutilla"];
+$frutas2 = ["pera", "durazno", "uva", "frutilla"];
 
 // *arreglo asociativo
 // Un arreglo asociativo es aquel en el que los elementos se acceden mediante claves (nombres en lugar de índices numéricos).
@@ -119,10 +119,10 @@ $alumnos2 = [
     ["nombre" => "María", "edad" => 22]
 ];
 
-$alumnos3=array(
-    array('Juan',20),
-    array('Maria',22),
-    array('Pedro',19,array('matematica',5.7),array('historia',6.2)),
+$alumnos3 = array(
+    array('Juan', 20),
+    array('Maria', 22),
+    array('Pedro', 19, array('matematica', 5.7), array('historia', 6.2)),
 );
 
 // * LENGHT 
@@ -147,11 +147,12 @@ $concatenacion = "";
 
 foreach ($frutas as $fruta) {
     $concatenacion .= $fruta . ", ";
-};
+}
+;
 echo "{$concatenacion} <br> ";
 
-$sortArray ='';
-$revertSortArray ='';
+$sortArray = '';
+$revertSortArray = '';
 
 echo "<br>";
 
@@ -161,7 +162,8 @@ sort($frutas);
 
 foreach ($frutas as $fruta) {
     $sortArray .= $fruta . ",";
-};
+}
+;
 echo $sortArray;
 
 echo "<br><br>";
@@ -172,17 +174,20 @@ rsort($frutas);
 
 foreach ($frutas as $fruta) {
     $revertSortArray .= $fruta . ",";
-};
-echo($revertSortArray);
+}
+;
+echo ($revertSortArray);
 
 //* usort()
 echo "<br><br>";
 echo "ORDENAR ARREGLO CON MÉTODO DE COMPARACION PERSONALIZADA: usort()  ------------------------------------- <br><br>";
-class Persona {
+class Persona
+{
     public $nombre;
     public $edad;
 
-    public function __construct($nombre, $edad) {
+    public function __construct($nombre, $edad)
+    {
         $this->nombre = $nombre;
         $this->edad = $edad;
     }
@@ -198,7 +203,8 @@ $personas = [
 print_r($personas);
 echo "<br>";
 // Función de comparación personalizada
-function compararPorEdad($a, $b) {
+function compararPorEdad($a, $b)
+{
     if ($a->edad == $b->edad) {
         return 0;
     }
@@ -218,8 +224,9 @@ foreach ($personas as $persona) {
 echo "<br><br>";
 echo "MOSTRAR KEY - VALUE:  ------------------------------------- <br><br>";
 foreach ($personas2 as $key => $value) {
-    echo $key .":". $value . "<br>";
-};
+    echo $key . ":" . $value . "<br>";
+}
+;
 
 
 // * acceso a Arreglos multidimensionales
@@ -257,7 +264,7 @@ echo "<br><br>";
 echo "CONDICIONALES:  ------------------------------------- <br><br>";
 
 echo "SHORTHAND IF:";
-$sinPrecio=null;
+$sinPrecio = null;
 echo "existe precio en la variable \$precio ?: " . (isset($precio) ? "Si" : "No") . "<br>";
 echo "existe precio en la variable \$sinPrecio ?: " . (isset($sinPrecio) ? "Si" : "No") . "<br>";
 
@@ -290,7 +297,7 @@ print_r($colores);
 echo "<br>";
 print_r($alumnos);
 
-$coercion ='12';
+$coercion = '12';
 echo "<br><br>";
 echo "Valor de coercion para 12 o '12' <br>";
 echo " Con Var_dump " . var_dump($coercion) . "<br>";
@@ -341,9 +348,9 @@ echo $textoMay;
 echo "<br><br>";
 echo "ELIMINAR ESPACIOS: trim() ------------------------------------- <br><br>";
 $cadena = "   ¡Hola!   ";
-echo "espacio".$cadena."espacio <br>";
+echo "espacio" . $cadena . "espacio <br>";
 $cadenaLimpia = trim($cadena);
-echo "sin espacio".$cadenaLimpia ."sin espacio";
+echo "sin espacio" . $cadenaLimpia . "sin espacio";
 
 //* explode()
 echo "<br><br>";
@@ -372,7 +379,8 @@ $frutas = ["manzana", "plátano", "naranja"];
 print_r($frutas);
 echo "<br>";
 $cantidad = count($frutas);
-echo "Hay $cantidad frutas en el arreglo.";$frase = implode(", ", $frutas);
+echo "Hay $cantidad frutas en el arreglo.";
+$frase = implode(", ", $frutas);
 
 //* array_push()
 echo "<br><br>";
@@ -397,7 +405,7 @@ print_r($nombres);
 //* array_shift()
 echo "<br><br>";
 echo "ELIMINAR Y OBTENER EL PRIMER ELEMENTO DE UN ARREGLO: array_shift()  ------------------------------------- <br><br>";
-$nombres = ["Juan", "María", "Pedro","José"];
+$nombres = ["Juan", "María", "Pedro", "José"];
 print_r($nombres);
 echo "<br>";
 $primerNombre = array_shift($nombres);
@@ -517,7 +525,8 @@ echo "DECLARACIONES DE TIPO ESCALAR CON MODO ESTRICTO:   -----------------------
 //declare(strict_types=1); //se debe declarar en la primera línea del script
 
 // Declaración de tipo escalar para parámetros y valor de retorno
-function suma(int $a, int $b) {
+function suma(int $a, int $b)
+{
     return $a + $b;
 }
 
@@ -532,7 +541,8 @@ echo "DECLARACIONES DE TIPO DEVOLUCION CON MODO ESTRICTO:   --------------------
 //declare(strict_types=1); //se debe declarar en la primera línea del script
 
 // Declaración de tipo de retorno
-function suma2(int $a, int $b): int {
+function suma2(int $a, int $b): int
+{
     return $a + $b;
 }
 
@@ -545,21 +555,21 @@ echo "<br><br>";
 echo "OPERADOR DE NAVE ESPACIAL:   ------------------------------------- <br><br>";
 // Comparación de números enteros
 echo "Comparación de números enteros:<br>";
-echo "5 <=> 5: " . (5 <=> 5) . "<br>";  // Igual (0)
-echo "5 <=> 3: " . (5 <=> 3) . "<br>";  // Mayor (1)
-echo "3 <=> 5: " . (3 <=> 5) . "<br>";  // Menor (-1)
+echo "5 <=> 5: " . (5 <=> 5) . "<br>"; // Igual (0)
+echo "5 <=> 3: " . (5 <=> 3) . "<br>"; // Mayor (1)
+echo "3 <=> 5: " . (3 <=> 5) . "<br>"; // Menor (-1)
 
 // Comparación de números decimales
 echo "<br>Comparación de números decimales:<br>";
-echo "2.5 <=> 2.5: " . (2.5 <=> 2.5) . "<br>";   // Igual (0)
-echo "2.5 <=> 3.14: " . (2.5 <=> 3.14) . "<br>";  // Menor (-1)
-echo "3.14 <=> 2.5: " . (3.14 <=> 2.5) . "<br>";  // Mayor (1)
+echo "2.5 <=> 2.5: " . (2.5 <=> 2.5) . "<br>"; // Igual (0)
+echo "2.5 <=> 3.14: " . (2.5 <=> 3.14) . "<br>"; // Menor (-1)
+echo "3.14 <=> 2.5: " . (3.14 <=> 2.5) . "<br>"; // Mayor (1)
 
 // Comparación de cadenas
 echo "<br>Comparación de cadenas:<br>";
-echo '"manzana" <=> "manzana": ' . ("manzana" <=> "manzana") . "<br>";   // Igual (0)
-echo '"manzana" <=> "naranja": ' . ("manzana" <=> "naranja") . "<br>";   // Menor (-1)
-echo '"naranja" <=> "manzana": ' . ("naranja" <=> "manzana") . "<br>";   // Mayor (1)
+echo '"manzana" <=> "manzana": ' . ("manzana" <=> "manzana") . "<br>"; // Igual (0)
+echo '"manzana" <=> "naranja": ' . ("manzana" <=> "naranja") . "<br>"; // Menor (-1)
+echo '"naranja" <=> "manzana": ' . ("naranja" <=> "manzana") . "<br>"; // Mayor (1)
 
 
 
