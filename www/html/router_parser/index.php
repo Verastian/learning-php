@@ -5,16 +5,10 @@ require_once 'src/libs/router.control.lib.php';
 
 require_once 'src/repositories/user/user.repository.php';
 require_once 'src/services/user/user.service.php';
+require_once 'src/models/user/user.model.php';
 // require_once 'src/controllers/user/user.controller.php';
 
-define('BASE_PATH', dirname(__DIR__) . '/router_parser/');
 
-// Establecer una conexión a la base de datos
-
-// Crear una instancia 
-// $userRepository = new UserRepository($mssql);
-// $userService = new UserService($userRepository);
-// $userController = new UserController($userService);
 $rv = new RouteView();
 $seccion = $_GET['pagina'] ?? 'home';
 $accion = $_GET['accion'] ?? 'index';
