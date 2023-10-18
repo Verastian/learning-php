@@ -1,0 +1,39 @@
+RewriteEngine On
+
+RewriteBase /router_parser/
+
+RewriteRule ^([a-z]+)/([a-z]+)$  index.php?pagina=$1&accion=$2 [QSA]
+RewriteRule ^([a-z]+)$  index.php?pagina=$1 [QSA]
+
+
+#  .htaccess 
+# es una configuración para servidores web basados en Apache 
+# que se utiliza para modificar la configuración del servidor 
+# en el directorio donde se encuentra el archivo. 
+# Puede controlar varias configuraciones y funcionalidades, 
+# como redirecciones de URL, 
+# reescritura de URL, 
+# configuración de encabezados y más. 
+
+# RewriteRule 
+# ^([a-z]+)/([a-z]+)$ index.php?pagina=$1&accion=$2 [QSA]: 
+# Esta regla de reescritura toma una URL que sigue el 
+# patrón de dos partes alfanuméricas separadas por una barra (/). 
+# Por ejemplo, una URL como example.com/seccion/accion 
+# sería reescrita internamente como 
+# example.com/index.php?pagina=seccion&accion=accion. 
+# [QSA] indica que se deben adjuntar las cadenas de 
+# consulta existentes al resultado.
+
+# RewriteEngine On: 
+# Esta línea activa el módulo de 
+# reescritura de URL de Apache. 
+# Es esencial para usar las reglas de reescritura.
+
+# RewriteRule ^([a-z]+)$ index.php?pagina=$1 [QSA]: 
+# Esta regla de reescritura toma una URL que sigue 
+# el patrón de una parte alfanumérica. 
+# Por ejemplo, una URL como example.com/seccion se reescribiría 
+# internamente como example.com/index.php?pagina=seccion. 
+# [QSA] aquí también indica que se deben adjuntar las cadenas 
+# de consulta existentes.
