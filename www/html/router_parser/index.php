@@ -1,18 +1,13 @@
 <?php
-
 require_once 'src/libs/template.parser.lib.php';
 require_once 'src/libs/router.control.lib.php';
-
 require_once 'src/repositories/user/user.repository.php';
 require_once 'src/services/user/user.service.php';
 require_once 'src/models/user/user.model.php';
 // require_once 'src/controllers/user/user.controller.php';
-
-
 $rv = new RouteView();
 $seccion = $_GET['pagina'] ?? 'home';
 $accion = $_GET['accion'] ?? 'index';
-
 ?>
 <!DOCTYPE html>
 <html lang="en">
