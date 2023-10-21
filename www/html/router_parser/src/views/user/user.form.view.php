@@ -11,9 +11,15 @@ if ((isset($errors) && !empty($errors))) {
 
 <div class="">
     <div class="w-50 mx-auto border border-secondary p-5 rounded">
-        <h1 class="pb-2">Crear usuario</h1>
+        <h1 class="pb-2">
+            <?php echo $currentUser ? 'Actualizar Usuario' : 'Crear Usuario'; ?>
+        </h1>
         <form class="row g-3 needs-validation vstack gap-2" novalidate
             action="/router_parser/user/<?php echo $currentUser ? 'update' : 'create'; ?>" method="post">
+            <!-- ID -->
+            <?php if ($currentUser): ?>
+            <input type="hidden" name="id" value="<?php echo $currentUser->getId(); ?>">
+            <?php endif; ?>
             <!-- NAME -->
             <div class="col-md-12">
                 <label for="validationCustom01" class="form-label">Nombre</label>
