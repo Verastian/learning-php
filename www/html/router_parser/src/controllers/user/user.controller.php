@@ -49,34 +49,47 @@ class UserController
     $email = isset($_POST['email']) ? filter_var($_POST['email'], FILTER_SANITIZE_EMAIL) : null;
     $password = isset($_POST['password']) ? htmlspecialchars($_POST['password']) : null;
 
+    $errors = array();
     // Validar el formato del correo electrónico
     if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-      echo "El formato del correo electrónico no es válido.";
-      return;
+      $nameError = "El formato del correo electrónico no es válido.";
+      $errors['email'] = $nameError;
+
     }
     // Validar el nombre: solo permite letras y espacios
     if (!preg_match("/^[a-zA-Z ]*$/", $name)) {
-      echo "El nombre solo debe contener letras y espacios.";
-      return;
+      $nameError = "El nombre solo debe contener letras y espacios.";
+      $errors['name'] = $nameError;
+
     }
 
     // Validar la contraseña: al menos 8 caracteres con al menos un número y un carácter especial
     if (!preg_match("/^(?=.*[A-Za-z])(?=.*\d)(?=.*[$@$!%*#?&])[A-Za-z\d$@$!%*#?&]{8,}$/", $password)) {
-      echo "La contraseña debe tener al menos 8 caracteres que incluyan al menos un número y un carácter especial.";
-      return;
+      $nameError = "La contraseña debe tener al menos 8 caracteres que incluyan al menos un número y un carácter especial.";
+      $errors['password'] = $nameError;
+    }
+    if (!empty($errors)) {
+      $data = array(
+        'errors' => $errors,
+      );
+      // include('src/views/user/user.form.view.php');
+      return $data;
+      // die();
+    }else{
+
+      $result = $this->userService->createUser($name, $email, $password);
+  
+      if ($result['success']) {
+        header('Location: /router_parser/user');
+        exit;
+      } else {
+        echo $result['message'];
+      }
+  
+      // Liberar el búfer de salida
+      ob_end_flush();
     }
 
-    $result = $this->userService->createUser($name, $email, $password);
-
-    if ($result['success']) {
-      header('Location: /router_parser/user');
-      exit;
-    } else {
-      echo $result['message'];
-    }
-
-    // Liberar el búfer de salida
-    ob_end_flush();
   }
   // * CREATE UPDATE
   public function update()

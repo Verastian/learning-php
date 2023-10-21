@@ -7,29 +7,53 @@
 <?php
 $templateParser = new TemplateParser();
 ?>
-<ul>
-    <?php foreach ($users as $user): ?>
-    <li>
-        Nombre:
-        <?php echo $user->getName(); ?>, Email:
-        <?php echo $user->getEmail(); ?> -
 
-        <a href="/router_parser/user/show?id=<?php echo $user->getId(); ?>">Ver detalles</a> -
+<div class="table-responsive-sm caption-top">
+    <table class="table">
+        <caption>List of users</caption>
+        <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Nombre</th>
+                <th scope="col">Email</th>
+            </tr>
+        </thead>
+        <tbody>
+            <?php foreach ($users as $user): ?>
+            <tr>
+                <th scope="row">
+                    <?php echo $user->getId(); ?>
+                </th>
+                <td>
+                    <?php echo $user->getName(); ?>
+                </td>
+                <td>
+                    <?php echo $user->getEmail(); ?>
+                </td>
+                <td>
+                    <a href="/router_parser/user/show?id=<?php echo $user->getId(); ?>">Ver detalles</a>
+                </td>
+                <td>
+                    <form method="post" action="/router_parser/user/delete">
+                        <input type="hidden" name="user_id" value="<?php echo $user->getId(); ?>">
+                        <button class="btn btn-danger btn-sm" type="submit">Eliminar</button>
+                    </form>
+                </td>
+                <td>
+                    <form method="post" action="/router_parser/user/form">
+                        <input type="hidden" name="user_id" value="<?php echo $user->getId(); ?>">
+                        <button class="btn btn-warning btn-sm" type="submit">Editar</button>
+                    </form>
+                </td>
+            </tr>
+            <?php endforeach; ?>
+        </tbody>
+    </table>
+</div>
+<div class="d-flex justify-content-between">
 
-        <form method="post" action="/router_parser/user/delete">
-            <input type="hidden" name="user_id" value="<?php echo $user->getId(); ?>">
-            <button type="submit">Eliminar</button>
-        </form>
-        <form method="post" action="/router_parser/user/form">
-            <input type="hidden" name="user_id" value="<?php echo $user->getId(); ?>">
-            <button type="submit">Editar</button>
-        </form>
-
-    </li>
-
-    <?php endforeach; ?>
-</ul>
-<button onclick="javascript:history.back()">Volver</button>
-<form action="/router_parser/user/form">
-    <button type="submit">Crear usuario</button>
-</form>
+    <button class="btn btn-outline-primary" type="button" onclick="javascript:history.back()">Volver</button>
+    <form action="/router_parser/user/form">
+        <button class="btn btn-primary" type="submit">Crear usuario</button>
+    </form>
+</div>
