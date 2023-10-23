@@ -15,10 +15,10 @@ if ((isset($errors) && !empty($errors))) {
             <?php echo $currentUser ? 'Actualizar Usuario' : 'Crear Usuario'; ?>
         </h1>
         <form class="row g-3 needs-validation vstack gap-2" novalidate
-            action="/router_parser/user/<?php echo $currentUser ? 'update' : 'create'; ?>" method="post">
+            action="/basic_crud/user/<?php echo $currentUser ? 'update' : 'create'; ?>" method="post">
             <!-- ID -->
             <?php if ($currentUser): ?>
-            <input type="hidden" name="id" value="<?php echo $currentUser->getId(); ?>">
+                <input type="hidden" name="id" value="<?php echo $currentUser->getId(); ?>">
             <?php endif; ?>
             <!-- NAME -->
             <div class="col-md-12">

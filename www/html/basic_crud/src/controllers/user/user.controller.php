@@ -75,17 +75,17 @@ class UserController
       // include('src/views/user/user.form.view.php');
       return $data;
       // die();
-    }else{
+    } else {
 
       $result = $this->userService->createUser($name, $email, $password);
-  
+
       if ($result['success']) {
-        header('Location: /router_parser/user');
+        header('Location: /basic_crud/user');
         exit;
       } else {
         echo $result['message'];
       }
-  
+
       // Liberar el búfer de salida
       ob_end_flush();
     }
@@ -120,7 +120,7 @@ class UserController
     $updateResult = $this->userService->updateUser($id, $name, $email, $password);
 
     if ($updateResult['success']) {
-      header('Location: /router_parser/user');
+      header('Location: /basic_crud/user');
       exit;
     } else {
       echo $updateResult['message'];

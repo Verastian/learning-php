@@ -8,22 +8,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>User Details</title>
     <style>
-    .card {
-        border: 1px solid #ccc;
-        border-radius: 5px;
-        padding: 20px;
-        width: 300px;
-        margin: 20px;
-        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-    }
+        .card {
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            padding: 20px;
+            width: 300px;
+            margin: 20px;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+        }
 
-    .card h2 {
-        margin-bottom: 10px;
-    }
+        .card h2 {
+            margin-bottom: 10px;
+        }
 
-    .card p {
-        margin: 5px 0;
-    }
+        .card p {
+            margin: 5px 0;
+        }
     </style>
 </head>
 
@@ -40,7 +40,7 @@
             <?php echo $user->getPassword(); ?>
         </p>
     </div>
-    <button onclick="javascript:history.back()">Volver</button>
+    <button class="btn btn-outline-primary" type="button" onclick="javascript:history.back()">Volver</button>
 </body>
 
 </html>

@@ -9,7 +9,7 @@ $rv = new RouteView();
 $seccion = $_GET['pagina'] ?? 'home';
 $accion = $_GET['accion'] ?? 'index';
 
-$base_url = "/router_parser/";
+$base_url = "/basic_crud/";
 ?>
 <!DOCTYPE html>
 <html lang="en" data-bs-theme="dark">
@@ -27,16 +27,16 @@ $base_url = "/router_parser/";
     <header>
         <nav class="navbar bg-dark border-bottom border-body navbar-expand-lg bg-body-tertiary" data-bs-theme="dark">
             <div class="container-fluid">
-                <a class="navbar-brand" href='/router_parser/home'>LOGO</a>
+                <a class="navbar-brand" href='/basic_crud/home'>LOGO</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText"
                     aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarText">
                     <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-                        <li class="nav-item"><a class="nav-link" href='/router_parser/home'>Home</a></li>
-                        <li class="nav-item"><a class="nav-link" href='/router_parser/user'>Usuarios</a></li>
-                        <li class="nav-item"><a class="nav-link" href='/router_parser/contact'>Contacto</a></li>
+                        <li class="nav-item"><a class="nav-link" href='/basic_crud/home'>Home</a></li>
+                        <li class="nav-item"><a class="nav-link" href='/basic_crud/user'>Usuarios</a></li>
+                        <li class="nav-item"><a class="nav-link" href='/basic_crud/contact'>Contacto</a></li>
                     </ul>
                     <button class="btn btn-dark" onclick={toogleTheme()}>
                         <i id="icon-theme" class="bi bi-sun"></i>
