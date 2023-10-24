@@ -1,8 +1,10 @@
 <?php
-define('MYSQLDB_SERVER', 'db');
-define('MYSQLDB_USER', 'root');
-define('MYSQLDB_PASSWORD', 'test');
-define('MYSQLDB_DATABASE', 'db_test');
+require_once(dirname(__FILE__) . "/env.config.php");
+
+define('MYSQLDB_SERVER', SERVER);
+define('MYSQLDB_USER', USER);
+define('MYSQLDB_PASSWORD', PASS);
+define('MYSQLDB_DATABASE', DB);
 
 function MYSQLConnect()
 {

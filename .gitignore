@@ -1,4 +1,5 @@
-# Exclude Node.js dependencies directory
+# Exclude dependencies directory
+//env.config.php
 
 
 # Exclude files or directories generated during construction
