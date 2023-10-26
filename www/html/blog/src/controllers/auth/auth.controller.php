@@ -3,16 +3,16 @@ class AuthController
 {
     private $userRepository;
 
-    public function __construct($userRepository)
+    public function __construct()
     {
-        $this->userRepository = $userRepository;
+        $this->userRepository = new UserRepository();
     }
 
-    function register()
+    public function register()
     {
         include('src/views/auth/register.view.php');
     }
-    public function createUser($name, $email, $password)
+    public function create()
     {
         // Validar y sanear los valores de $_POST
         $name = isset($_POST['name']) ? htmlspecialchars($_POST['name']) : '';

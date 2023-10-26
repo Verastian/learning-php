@@ -1,8 +1,25 @@
+<?php
+
+if (isset($_POST['register'])) {
+    //Obtener los valores
+    $name = $_POST["name"];
+    echo "" . $name . "";
+
+
+}
+echo "ARRIBA";
+
+
+?>
+
+
 <div class="row">
     <div class="col-sm-12">
-        <?php if(isset($error)) : ?>
+        <?php if (isset($error)): ?>
         <div class="alert alert-danger alert-dismissible fade show" role="alert">
-            <strong><?php echo $error; ?></strong>
+            <strong>
+                <?php echo $error; ?>
+            </strong>
             <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
         </div>
         <?php endif; ?>
@@ -11,9 +28,11 @@
 
 <div class="row">
     <div class="col-sm-12">
-        <?php if(isset($mensaje)) : ?>
+        <?php if (isset($mensaje)): ?>
         <div class="alert alert-success alert-dismissible fade show" role="alert">
-            <strong><?php echo $mensaje; ?></strong>
+            <strong>
+                <?php echo $mensaje; ?>
+            </strong>
             <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
         </div>
         <?php endif; ?>
@@ -31,11 +50,11 @@
                     Regístrate para poder comentar
                 </div>
                 <div class="card-body">
-                    <form method="POST" action="">
+                    <form method="POST" action="<?php echo RUTA_FRONT; ?>/auth/create">
 
                         <div class="mb-3">
                             <label for="nombre" class="form-label">Nombre:</label>
-                            <input type="text" class="form-control" name="nombre" placeholder="Ingresa el nombre">
+                            <input type="text" class="form-control" name="name" placeholder="Ingresa el nombre">
                         </div>
 
                         <div class="mb-3">
@@ -51,7 +70,7 @@
 
                         <div class="mb-3">
                             <label for="confirmarPassword" class="form-label">Confirmar password:</label>
-                            <input type="password" class="form-control" name="confirmar_password"
+                            <input type="password" class="form-control" name="confirm_password"
                                 placeholder="Ingresa la confirmación del password">
                         </div>
 
