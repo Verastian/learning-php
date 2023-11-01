@@ -52,7 +52,7 @@ class LoginController extends Controller
 							"colorButton" => "btn-success",
 							"textButton" => "Regresar"
 						];
-						$this->view("mensaje", $data);
+						$this->view("message", $data);
 					} else {
 						$data = [
 							"title" => "Cambio de clave de acceso",
@@ -66,7 +66,7 @@ class LoginController extends Controller
 							"colorButton" => "btn-danger",
 							"textButton" => "Regresar"
 						];
-						$this->view("mensaje", $data);
+						$this->view("message", $data);
 					}
 
 				} else {
@@ -82,10 +82,10 @@ class LoginController extends Controller
 						"colorButton" => "btn-danger",
 						"textButton" => "Regresar"
 					];
-					$this->view("mensaje", $data);
+					$this->view("message", $data);
 				}
+				exit;
 			}
-			// exit;
 		}
 
 		$data = [

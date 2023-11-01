@@ -4,12 +4,12 @@
  */
 class Helper
 {
-    public static function show($data = '', $detener = true)
+    public static function show($data = '', $stop = true)
     {
         print "<pre>";
         var_dump($data);
         print "</pre>";
-        if ($detener) {
+        if ($stop) {
             exit;
         }
     }

@@ -54,7 +54,7 @@ class Login
                     "colorBoton" => "btn-danger",
                     "textoBoton" => "Regresar"
                 ];
-                $this->view("mensaje", $datos);
+                $this->view("message", $datos);
             }
         }
     }

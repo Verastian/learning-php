@@ -1,0 +1,62 @@
+[
+  {
+    "hostid": 1,
+    "host": "Sonda1",
+    "planid": 1001,
+    "plan": "Plan A",
+    "dns": "192.168.1.100",
+    "status": 0,
+    "available": 1,
+    "active": "yes",
+    "site_city": "CityA",
+    "id_comuna": 123
+  },
+  {
+    "hostid": 2,
+    "host": "Sonda2",
+    "planid": 1002,
+    "plan": "Plan B",
+    "dns": "192.168.1.101",
+    "status": 1,
+    "available": 0,
+    "active": "no",
+    "site_city": "CityB",
+    "id_comuna": 456
+  },
+  {
+    "hostid": 3,
+    "host": "Sonda3",
+    "planid": 1003,
+    "plan": "Plan C",
+    "dns": "192.168.1.102",
+    "status": 0,
+    "available": 1,
+    "active": "yes",
+    "site_city": "CityC",
+    "id_comuna": 789
+  },
+  {
+    "hostid": 4,
+    "host": "Sonda4",
+    "planid": 1004,
+    "plan": "Plan D",
+    "dns": "192.168.1.103",
+    "status": 1,
+    "available": 0,
+    "active": "no",
+    "site_city": "CityD",
+    "id_comuna": 101
+  },
+  {
+    "hostid": 5,
+    "host": "Sonda5",
+    "planid": 1005,
+    "plan": "Plan E",
+    "dns": "192.168.1.104",
+    "status": 0,
+    "available": 1,
+    "active": "yes",
+    "site_city": "CityE",
+    "id_comuna": 112
+  }
+]
